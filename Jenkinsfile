@@ -22,5 +22,13 @@ pipeline{
 		  
 		    }
 		    }
+	    
+		stage('start tomcat') {
+                    steps{
+		    sh 'sshpass -p ubuntu  ubuntu@18.191.185.169:/home/ubuntu/soft/apache-tomcat-8.0.53/bin; && ./startup.sh'
+		  
+		    }
+		    }
+	    
     }
 }
