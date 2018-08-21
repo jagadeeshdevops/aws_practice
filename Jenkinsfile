@@ -9,7 +9,7 @@ pipeline{
 	   }
                 stage('build') {
                 steps{
-                    withMaven(maven: 'M2_HOME') {
+                    withMaven(maven: 'maven-3.5.4') {
                         sh 'mvn clean install'
 		
 		}                        
@@ -18,7 +18,7 @@ pipeline{
 
 		stage('deploy') {
                     steps{
-		    withMaven(maven: 'M2_HOME') {
+		    withMaven(maven: 'maven-3.5.4') {
                                     sh 'sshpass -p ubuntu scp /home/ubuntu/.jenkins/workspace/aws_build/target/data_trainings.war ubuntu@18.191.185.169:/home/ubuntu/soft/apache-tomcat-8.0.53/webapps'
 		}             
 		    }
