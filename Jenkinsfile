@@ -18,14 +18,14 @@ pipeline{
 
 		stage('deploy') {
                     steps{
-		    sh 'sshpass -p ubuntu scp /home/ubuntu/.jenkins/workspace/aws_build/target/data_trainings.war ubuntu@18.191.185.169:/home/ubuntu/soft/apache-tomcat-8.0.53/webapps'
+		    sh 'sshpass -p ubuntu scp /home/ubuntu/.jenkins/workspace/aws_build/target/data_trainings.war ubuntu@18.188.183.10:/home/ubuntu/soft/apache-tomcat-8.0.53/webapps'
 		  
 		    }
 		    }
 	    
 		stage('start tomcat') {
                     steps{
-		    sh 'sshpass -p ubuntu  ubuntu@18.191.185.169:/home/ubuntu/soft/apache-tomcat-8.0.53/bin/startup.sh'
+		    sh 'sshpass -p ubuntu  ubuntu@18.188.183.10:/home/ubuntu/soft/apache-tomcat-8.0.53/bin/startup.sh'
 		  
 		    }
 		    }
